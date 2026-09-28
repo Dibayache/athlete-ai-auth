@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Athlete AI — Autorisation Strava</title>
+</head>
+<body>
+    <h1>🏃 Athlete AI</h1>
+    <p>Autorisation Strava reçue.</p>
+
+    <p>Code d'autorisation :</p>
+
+    <textarea id="code" rows="4" cols="60" readonly></textarea>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
+
+        if (code) {
+            document.getElementById("code").value = code;
+        } else {
+            document.getElementById("code").value =
+                "Aucun code reçu.";
+        }
+    </script>
+</body>
+</html>
